@@ -6,8 +6,8 @@ Version: 1.0.0
 ## Table of Contents
 
 - Labs:
-  - [one](basics/Main.java) Basics
-  - [two](basiclibrary/lib/src/main/java/basiclibrary/Library.java) Libraries
+  - [one](basics/README.md) Basics
+  - [two](basiclibrary/lib/src/main/java/basiclibrary/README.md) Libraries
 
 ## Overview
 
@@ -22,17 +22,17 @@ Primitives, control flow, arrays, loops, testing
 A function that accepts a word and a number and returns a string with the word pluralized with an “s” if the number is zero, or greater than one.
 
 **flipNHeads**  
-A function that accepts an integer n and flips coins until n heads are flipped in a row. Simulate coin flipping by choosing a random number between 0 and 1. Numbers below .5 are considered tails. Numbers at and above .5 are considered heads. Print out heads or tails on one line for each flip. Print It took FLIPS flips to flip N heads in a row. once n heads have been in a row.
+A function that accepts an integer n and flips coins until n heads are flipped in a row. Simulates coin flipping by choosing a random number between 0 and 1. Numbers below .5 are considered tails. Numbers at and above .5 are considered heads. Prints out heads or tails on one line for each flip. Prints It took FLIPS flips to flip N heads in a row. once n heads have been in a row.
 
 **clock**  
-A method that uses Java’s built-in LocalDateTime object to constantly print out the current time to the console, second by second. The program should run until someone manually kills it with CTRL-C or presses the “stop” button in their IDE. Each time should only be printed once. Your program should detect when the seconds increase and only print something out when the timestamp changes.
+A method that uses Java’s built-in LocalDateTime object to constantly print out the current time to the console, second by second. Runs until manually killed with CTRL-C or “stop” button in IDE. Each time is printed once. Detects when the seconds increase and only prints when the timestamp changes.
 
-Zero-pad single digit numbers as strings so the timestamp is always the same number of characters.
+Single digit numbers are zero-padded as strings, so the timestamp is always the same number of characters.
 
 ### Lab two
 
 **roll**  
-A method that accepts an integer n and rolls a six-sided dice n times. The method should return an array containing the values of the rolls.
+A method that accepts an integer n and rolls a six-sided dice n times. Returns an array containing the values of the rolls.
 
 **containsDuplicates**  
 A method that returns true or false depending on whether the array contains duplicate values.
@@ -41,4 +41,12 @@ A method that returns true or false depending on whether the array contains dupl
 A method that accepts an array of integers and calculates and returns the average of all the values in the array.
 
 **lowestAverage**  
-Given an array of arrays, calculate the average value for each array and return the array with the lowest average.
+Given an array of arrays, calculates the average value for each array and returns the array with the lowest average.
+
+### Lab three
+
+**weatherMap**  
+Iterates through the given weather data to find the min and max values. Uses a HashSet of type Integer to keep track of all the unique temperatures seen. Finally, iterates from the min temp to the max temp and creates a String containing any temperature not seen during the month. Returns that String.
+
+**voteMap**  
+A function that accepts a List of Strings representing votes and returns one string to show what got the most votes.
