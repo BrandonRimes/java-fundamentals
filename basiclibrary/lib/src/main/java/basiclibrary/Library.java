@@ -3,6 +3,9 @@
  */
 package basiclibrary;
 import java.util.Random;
+import java.util.HashSet;
+import java.util.TreeSet;
+import java.util.ArrayList;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -42,6 +45,16 @@ public class Library {
             }
         }
         return duplicates;
+
+//        for(int i = 0; i < arr.size(); i++){
+//            for(int j = 0; j < arr.size(); j++){
+//                if (i != j && arr.get(i).equals(arr.get(j))){
+//                    if(arr.get(i).equals(arr.get(j))){
+//                        return true;
+//                    }
+//                }
+//            }
+//        }
     }
 
     public static int calculateAverage(int[] arr)
@@ -58,6 +71,7 @@ public class Library {
     {
         int[] lowAvgArr = new int[0];
         int lowest = 100000000;
+        // double lowest = Double.POSITIVE_INFINITY
         for(int[] arr : matrix)
         {
             int arrAvg = calculateAverage(arr);
@@ -69,12 +83,45 @@ public class Library {
         return lowAvgArr;
     }
 
+    static int[][] weeklyMonthTemperatures =
+    {
+        {66, 64, 58, 65, 71, 57, 60},
+        {57, 65, 65, 70, 72, 65, 51},
+        {55, 54, 60, 53, 59, 57, 61},
+        {65, 56, 55, 52, 55, 62, 57}
+    };
+
+    public static String weatherMap(int[][] matrix)
+    {
+        HashSet<Integer> uniqueTemps = new HashSet<>();
+        for(int[] arr : matrix)
+        {
+            for(int i : arr)
+            {
+                uniqueTemps.add(i);
+            }
+        }
+        TreeSet<Integer> uniqueTempsTree = new TreeSet<>(uniqueTemps);
+        int hightTemp = uniqueTempsTree.last();
+        int lowTemp = uniqueTempsTree.first();
+        String output = "High: "+ hightTemp +"\nLow: "+ lowTemp +"\n";
+        for(int i = lowTemp; i < hightTemp; i++)
+        {
+            if(!uniqueTempsTree.contains(i))
+            {
+                output += "Never saw temperature: "+ i +"\n";
+            }
+        }
+        return output;
+    }
+
     public static void main(String[] args)
     {
         int[] testArr = {0,2,2,4};
-        boolean dupe = containsDuplicates(testArr);
+        // boolean dupe = containsDuplicates(testArr);
         // roll(3);
-        System.out.println(calculateAverage(testArr));
+        // System.out.println(calculateAverage(testArr));
+        System.out.println(weatherMap(weeklyMonthTemperatures));
         System.out.println("hey");
     }
 
