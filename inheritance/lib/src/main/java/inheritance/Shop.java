@@ -2,28 +2,29 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant
-{
+public class Shop {
     String name;
-    float rating;
+    String description;
     float price;
+    float rating;
     ArrayList<Review> reviews = new ArrayList<>();
 
-    public Restaurant(String name, float price)
+    public Shop(String name, String description, float price)
     {
         this.name = name;
+        this.description = description;
         this.price = price;
-        this.rating = null;
     }
 
     public String toString()
     {
-        return
-        (
-            "Restaurant: "+ this.name +
-            "\nPrice (1-3): "+ this.price +
-            "\nRating (0-5): "+ this.rating
+        String shopString;
+        shopString = (
+            "Shop: "+ this.name +
+            "\nAbout: "+ this.description +
+            "\nPrice: " + "$".repeat(this.price)
         );
+        return shopString;
     }
 
     public void addReview(float rating, String body, String author)

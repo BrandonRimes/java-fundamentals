@@ -8,7 +8,7 @@ Version: 1.0.0
 - Labs:
   - [one](basics/README.md) Basics
   - [two](basiclibrary/lib/src/main/java/basiclibrary/README.md) Libraries
-  - [six](inheritance/README.md) Inheritance
+  - [six, seven](inheritance/README.md) Inheritance
 
 ## Overview
 
